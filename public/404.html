@@ -6,12 +6,12 @@
     <title>PantryPal</title>
     <meta name="description" content="Fully offline mobile and tablet inventory management with barcode scanning, automated stock count, and best-by dates." />
     <meta name="theme-color" content="#0f172a" />
-    <base href="/Pantrypal/" />
+    <base href="/PantryPal/" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="icon" type="image/svg+xml" href="icon.svg" />
     <script>
       // GitHub Pages SPA redirect — send all 404s back to index
-      const base = '/Pantrypal/';
+      const base = '/PantryPal/';
       const p = window.location.pathname;
       if (p.startsWith(base) && p !== base && !p.includes('.')) {
         window.location.replace(base + '?p=' + encodeURIComponent(p.replace(base, '')));

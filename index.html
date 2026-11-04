@@ -11,8 +11,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="PantryPal" />
 
-    <!-- ✅ Critical for GitHub Pages subpath -->
-    <base href="/Pantrypal/" />
+    <!-- ✅ Critical — matches repo name EXACTLY: PantryPal (capital P A L) -->
+    <base href="/PantryPal/" />
 
     <!-- ✅ Relative paths work everywhere -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -30,7 +30,7 @@
     <!-- ✅ SPA redirect: prevents 404 on refresh -->
     <script>
       (function () {
-        const repoPrefix = '/Pantrypal/';
+        const repoPrefix = '/PantryPal/';
         const path = window.location.pathname;
         if (!path.startsWith(repoPrefix) && !path.endsWith('.html')) {
           const target = repoPrefix + (path.startsWith('/') ? path.slice(1) : path);
