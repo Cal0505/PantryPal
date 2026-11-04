@@ -1,8 +1,45 @@
+# Dependencies
 node_modules/
-build/
+bun.lock
+bun.lockb
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
 dist/
+dev-dist/
+build/
 coverage/
-.DS_Store
-*.log
-.env*
+
+# Environment & secrets
+.env
+.env.*
 !.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Capacitor / Android
+PantryPal_android/
+android/
+capacitor/dist/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
