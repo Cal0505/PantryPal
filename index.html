@@ -11,8 +11,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="PantryPal" />
 
-    <!-- ✅ Critical for GitHub Pages subpath -->
-    <base href="/pantrypal/" />
+    <!-- ✅ Critical — matches repo name EXACTLY: PantryPal (capital P A L) -->
+    <base href="/PantryPal/" />
 
     <!-- ✅ Relative paths work everywhere -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -22,8 +22,8 @@
     <meta property="og:description" content="Fully offline mobile and tablet inventory management with barcode scanning, automated stock count, and best-by dates." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" crossorigin src="/assets/index-8MokO4wh.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BmTl-PuQ.css">
+    <script type="module" crossorigin src="/assets/index-l3W589Bc.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DNUxaZyn.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
@@ -31,7 +31,7 @@
     <!-- ✅ SPA redirect: prevents 404 on refresh -->
     <script>
       (function () {
-        const repoPrefix = '/pantrypal/';
+        const repoPrefix = '/PantryPal/';
         const path = window.location.pathname;
         if (!path.startsWith(repoPrefix) && !path.endsWith('.html')) {
           const target = repoPrefix + (path.startsWith('/') ? path.slice(1) : path);
