@@ -1,0 +1,8 @@
+{
+  "appId": "com.pantrypal.app",
+  "appName": "PantryPal",
+  "webDir": "dist",
+  "android": {
+    "path": "PantryPal_android"
+  }
+}

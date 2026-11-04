@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PantryPal</title>
+    <meta name="description" content="Fully offline mobile and tablet inventory management with barcode scanning, automated stock count, and best-by dates." />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="PantryPal" />
+
+    <!-- ✅ Critical for GitHub Pages subpath -->
+    <base href="/pantrypal/" />
+
+    <!-- ✅ Relative paths work everywhere -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+
+    <meta property="og:title" content="PantryPal" />
+    <meta property="og:description" content="Fully offline mobile and tablet inventory management with barcode scanning, automated stock count, and best-by dates." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="src/main.tsx"></script>
+
+    <!-- ✅ SPA redirect: prevents 404 on refresh -->
+    <script>
+      (function () {
+        const repoPrefix = '/pantrypal/';
+        const path = window.location.pathname;
+        if (!path.startsWith(repoPrefix) && !path.endsWith('.html')) {
+          const target = repoPrefix + (path.startsWith('/') ? path.slice(1) : path);
+          window.location.replace(target + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+  </body>
+</html>

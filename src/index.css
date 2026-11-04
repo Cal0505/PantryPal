@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Hide scrollbars globally across all browsers while retaining scrolling function */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Eliminate native select arrows across WebKit, Safari, and Blink */
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Remove default IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Ensure html and body fill screen for mobile PWA standalone mode */
+html, body {
+  min-height: 100%;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
