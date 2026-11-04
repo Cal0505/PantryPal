@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="PantryPal" />
 
-    <base href="/PantryPal/">
+    <!-- ✅ REMOVED hardcoded <base> — Vite handles this via config -->
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="icon" type="image/svg+xml" href="icon.svg" />
@@ -25,13 +25,20 @@
   <link rel="manifest" href="/PantryPal/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/PantryPal/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
+    
+    <!-- ✅ Smart redirect — only applies on GitHub Pages, NOT local dev -->
     <script>
       (function () {
         const repoPrefix = '/PantryPal/';
-        const path = window.location.pathname;
-        if (!path.startsWith(repoPrefix) && !path.endsWith('.html')) {
-          const target = repoPrefix + (path.startsWith('/') ? path.slice(1) : path);
-          window.location.replace(target + window.location.search + window.location.hash);
+        const isLocal = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1';
+        
+        if (!isLocal) {
+          const path = window.location.pathname;
+          if (!path.startsWith(repoPrefix) && !path.endsWith('.html')) {
+            const target = repoPrefix + (path.startsWith('/') ? path.slice(1) : path);
+            window.location.replace(target + window.location.search + window.location.hash);
+          }
         }
       })();
     </script>
