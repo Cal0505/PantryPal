@@ -13,8 +13,8 @@
     "android:open": "npx cap open android",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
-    
   },
+
   "dependencies": {
     "@capacitor-community/file-opener": "^8.0.1",
     "@capacitor/android": "^8.5.2",
