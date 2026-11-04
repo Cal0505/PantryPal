@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 const REPO_NAME = 'PantryPal';
 const isProd = process.env.NODE_ENV === 'production';
-const base = isProd ? `/${REPO_NAME}/` : '/'; // ✅ DEV = '/', PROD = '/PantryPal/'
+const base = isProd ? `/${REPO_NAME}/` : '/';
 
 export default defineConfig(() => ({
   base,
@@ -20,7 +20,7 @@ export default defineConfig(() => ({
         id: base,
         name: 'PantryPal',
         short_name: 'PantryPal',
-        description: 'Fully offline mobile and tablet inventory management with barcode scanning and best-by dates.',
+        description: 'Fully offline mobile and tablet inventory management with barcode scanning, automated stock count, and best-by dates.',
         theme_color: '#0f172a',
         background_color: '#0f172a',
         display: 'standalone',
@@ -42,10 +42,10 @@ export default defineConfig(() => ({
     alias: { '@': path.resolve(import.meta.dirname, '.') },
   },
   server: {
-    port: 3000,
+    port: 5173,        // ✅ MUST be here — line 45
     host: '0.0.0.0',
-    hmr: process.env.DISABLE_HMR !== 'true',
-    watch: process.env.DISABLE_HMR === 'true' ? null : {},
+    hmr: true,
+    watch: {},
   },
   build: {
     outDir: 'dist',
