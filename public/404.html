@@ -6,21 +6,19 @@
     <title>PantryPal</title>
     <meta name="description" content="Fully offline mobile and tablet inventory management with barcode scanning, automated stock count, and best-by dates." />
     <meta name="theme-color" content="#0f172a" />
-    <base href="/pantrypal/" />
+    <base href="/Pantrypal/" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="icon" type="image/svg+xml" href="icon.svg" />
     <script>
-      // GitHub Pages SPA routing fix
-      const base = '/pantrypal/';
+      // GitHub Pages SPA redirect — send all 404s back to index
+      const base = '/Pantrypal/';
       const p = window.location.pathname;
       if (p.startsWith(base) && p !== base && !p.includes('.')) {
-        sessionStorage.setItem('spaRedirect', p);
-        window.location.replace(base + '?' + window.location.search.slice(1));
+        window.location.replace(base + '?p=' + encodeURIComponent(p.replace(base, '')));
       }
     </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="src/main.tsx"></script>
+    <p>Redirecting...</p>
   </body>
 </html>

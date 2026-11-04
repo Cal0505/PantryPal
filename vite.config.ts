@@ -4,7 +4,8 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-const REPO_NAME = 'pantrypal';
+// ✅ Matches your repo name exactly — capital P
+const REPO_NAME = 'PantryPal';
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 const base = isGitHubPages ? `/${REPO_NAME}/` : '/';
 
@@ -27,52 +28,37 @@ export default defineConfig(() => ({
         start_url: base,
         scope: base,
         icons: [
-          {
-            src: `${base}pwa-192x192.png`,
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any'
-          },
-          {
-            src: `${base}pwa-512x512.png`,
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any'
-          },
-          {
-            src: `${base}pwa-maskable-512x512.png`,
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'maskable'
-          }
-        ]
+          { src: `${base}pwa-192x192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: `${base}pwa-512x512.png`, sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: `${base}pwa-maskable-512x512.png`, sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
       },
       devOptions: {
         enabled: true,
-        type: 'module'
-      }
-    })
+        type: 'module',
+      },
+    }),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.')
-    }
+      '@': path.resolve(import.meta.dirname, '.'),
+    },
   },
   server: {
     port: 3000,
     host: '0.0.0.0',
     hmr: process.env.DISABLE_HMR !== 'true',
-    watch: process.env.DISABLE_HMR === 'true' ? null : {}
+    watch: process.env.DISABLE_HMR === 'true' ? null : {},
   },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: true
+    sourcemap: true,
   },
   preview: {
-    port: 4173
-  }
+    port: 4173,
+  },
 }));
