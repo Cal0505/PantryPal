@@ -4,7 +4,6 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// ✅ ALWAYS /PantryPal/ — works everywhere
 const REPO_NAME = 'PantryPal';
 const base = `/${REPO_NAME}/`;
 
