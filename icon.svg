@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="laser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#ef4444" stop-opacity="1" />
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+
+  <!-- Inner subtle border -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#334155" stroke-width="4" opacity="0.6" />
+
+  <!-- Scanner Corner Brackets (Touch Target Reticle) -->
+  <path d="M 120 180 L 120 140 A 20 20 0 0 1 140 120 L 180 120" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
+  <path d="M 332 120 L 372 120 A 20 20 0 0 1 392 140 L 392 180" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
+  <path d="M 120 332 L 120 372 A 20 20 0 0 0 140 392 L 180 392" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
+  <path d="M 332 392 L 372 392 A 20 20 0 0 0 392 372 L 392 332" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Barcode Vertical Bars -->
+  <rect x="160" y="168" width="14" height="176" rx="4" fill="#f8fafc" />
+  <rect x="188" y="168" width="8" height="176" rx="3" fill="#f8fafc" />
+  <rect x="210" y="168" width="22" height="176" rx="4" fill="#f8fafc" />
+  <rect x="246" y="168" width="10" height="176" rx="3" fill="#f8fafc" />
+  <rect x="270" y="168" width="18" height="176" rx="4" fill="#f8fafc" />
+  <rect x="302" y="168" width="8" height="176" rx="3" fill="#f8fafc" />
+  <rect x="324" y="168" width="26" height="176" rx="4" fill="#f8fafc" />
+
+  <!-- Laser Scan Line -->
+  <line x1="100" y1="256" x2="412" y2="256" stroke="url(#laser)" stroke-width="6" stroke-linecap="round" />
+  <circle cx="256" cy="256" r="4" fill="#ef4444" />
+</svg>
