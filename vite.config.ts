@@ -4,7 +4,6 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// ✅ Matches your repo name exactly — capital P
 const REPO_NAME = 'PantryPal';
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 const base = isGitHubPages ? `/${REPO_NAME}/` : '/';
@@ -18,19 +17,19 @@ export default defineConfig(() => ({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon.svg'],
       manifest: {
-        id: base,
+        id: '/', // ✅ Fixed — use relative for proper scope
         name: 'PantryPal',
         short_name: 'PantryPal',
         description: 'Fully offline mobile and tablet inventory management with barcode scanning and best-by dates.',
         theme_color: '#0f172a',
         background_color: '#0f172a',
         display: 'standalone',
-        start_url: base,
+        start_url: '.', // ✅ Relative — works everywhere
         scope: base,
         icons: [
-          { src: `${base}pwa-192x192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },
-          { src: `${base}pwa-512x512.png`, sizes: '512x512', type: 'image/png', purpose: 'any' },
-          { src: `${base}pwa-maskable-512x512.png`, sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: 'pwa-maskable-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {
